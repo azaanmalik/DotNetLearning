@@ -1,0 +1,24 @@
+﻿@model User
+@{
+    ViewData["Title"] = "Login";
+}
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+
+<form asp-action="Index" method="post">
+
+    <input asp-for="UserId" class="form-control" hidden readonly />
+
+    <label asp-for="UserEmail" class="form-label"></label>
+    <input asp-for="UserEmail" class="form-control" />
+
+    <label asp-for="Password" class="form-label"></label>
+    <input asp-for="Password" class="form-control" />
+
+    <button type="submit" class="btn btn-primary">SignIn </button>
+
+</form>
+
