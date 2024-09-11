@@ -12,7 +12,7 @@ using UserRegisteration.Models;
 namespace UserRegisteration.Migrations
 {
     [DbContext(typeof(UserContext))]
-    [Migration("20240910095859_Initial")]
+    [Migration("20240911060723_Initial")]
     partial class Initial
     {
         /// <inheritdoc />

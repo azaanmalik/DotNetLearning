@@ -16,10 +16,13 @@
 
     <label asp-for="UserEmail" class="form-label"></label>
     <input asp-for="UserEmail" class="form-control" />
-
+    <span asp-validation-for="UserEmail" class="text-danger"></span>
+    
+    <br/>
     <label asp-for="Password" class="form-label"></label>
     <input asp-for="Password" class="form-control" />
-
+    <span asp-validation-for="Password" class="text-danger"></span>
+    <br/>
     <button type="submit" class="btn btn-primary mt-3">Sign In</button>
 
 </form>
