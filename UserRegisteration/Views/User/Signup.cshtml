@@ -7,41 +7,55 @@
     await Html.RenderPartialAsync("_ValidationScriptsPartial");
 }
 }
-<div class="container">
-    <h3 class="text-bg-dark text-center">Sign Up</h3>
-</div>
+<body class="d-flex justify-content-center align-items-center bg-light  min-vh-50">
+    <div class="container d-flex justify-content-center align-items-center min-vh-100 ">
+        <form asp-action="SignUp" method="post" class="p-2 rounded shadow bg-white" style="max-width: 500px; width: 100%;">
+            <h3 class="text-bg-dark text-center py-2 rounded">Sign Up</h3>
 
-<form asp-action="SignUp" method="post">
-    <div class="container">
+            <div class="mb-2">
+                <label asp-for="UserName" class="form-label">User Name</label>
+                <input asp-for="UserName" class="form-control" />
+                <span asp-validation-for="UserName" class="text-danger"></span>
+            </div>
 
-    <label asp-for="UserName" class="form-label"></label>
-    <input asp-for="UserName" class="form-control" />
-        <span asp-validation-for="UserName" class="text-danger"></span>
-        <br />
+            <div class="mb-2">
+                <label asp-for="UserEmail" class="form-label">Email</label>
+                <input asp-for="UserEmail" class="form-control" />
+                <span asp-validation-for="UserEmail" class="text-danger"></span>
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            </div>
 
-    <label asp-for="UserEmail" class="form-label mt-1"></label>
-    <input asp-for="UserEmail" class="form-control" />
-        <span asp-validation-for="UserEmail" class="text-danger"></span>
-        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-        <br />
-    <label asp-for="Password" class="form-label mt-1"></label>
-    <input asp-for="Password" class="form-control" />
-        <span asp-validation-for="Password" class="text-danger"></span>
-        <br />
-    <label asp-for="ConfirmPassword" class="form-label mt-1"></label>
-    <input asp-for="ConfirmPassword" class="form-control" />
-        <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
-        <br />
-    <label asp-for="Date_of_Birth" class="form-label mt-1"></label>
-    <input asp-for="Date_of_Birth" class="form-control" />
-        <span asp-validation-for="Date_of_Birth" class="text-danger"></span>
-        <br />
-    <label asp-for="Gender" class="form-label mt-1"></label>
-    <input asp-for="Gender" class="form-control" />
-        <span asp-validation-for="Gender" class="text-danger"></span>
-        <br />
-    <button type="submit" class="btn btn-primary mt-1">Sign Up</button>
- @*        <a asp-action="SignUp" class="btn btn-primary" asp-controller="User"> route</a> *@
+            
+            <div class="mb-2">
+                <label asp-for="Password" class="form-label">Password</label>
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+
+            <div class="mb-2">
+                <label asp-for="ConfirmPassword" class="form-label">Confirm Password</label>
+                <input asp-for="ConfirmPassword" class="form-control" />
+                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+            </div>
+
+            <div class="mb-2">
+                <label asp-for="Date_of_Birth" class="form-label">Date of Birth</label>
+                <input asp-for="Date_of_Birth" class="form-control" />
+                <span asp-validation-for="Date_of_Birth" class="text-danger"></span>
+            </div>
+
+            <div class="mb-2">
+                <label asp-for="Gender" class="form-label">Gender</label>
+                <input asp-for="Gender" class="form-control" />
+                <span asp-validation-for="Gender" class="text-danger"></span>
+            </div>
+
+            <!-- Buttons Container -->
+            <div class="d-flex justify-content-center mt-2">
+                <button type="submit" class="btn btn-primary me-2">Sign Up</button>
+                <a href="@Url.Action("Login", "User")" class="btn btn-secondary">Log In</a>
+            </div>
+        </form>
     </div>
-</form>
+</body>
 

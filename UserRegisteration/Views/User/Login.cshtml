@@ -7,23 +7,27 @@
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
 }
-<div class="container">
-    <h3 class="text-bg-dark text-center">Log In</h3>
-</div>
-<form asp-action="Login" method="post">
+<body class="d-flex justify-content-center align-items-center bg-light overflow-hidden">
 
-    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="container d-flex justify-content-center align-items-center min-vh-100 ">
+        <form asp-action="Login" method="post" class="p-2 rounded shadow bg-white" style="max-width: 500px; width: 100%;">
+
+            <h3 class="text-bg-dark text-center py-2 rounded">Log In</h3>
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
     <label asp-for="UserEmail" class="form-label"></label>
     <input asp-for="UserEmail" class="form-control" />
     <span asp-validation-for="UserEmail" class="text-danger"></span>
-    
-    <br/>
+
+            <br/>
     <label asp-for="Password" class="form-label"></label>
     <input asp-for="Password" class="form-control" />
     <span asp-validation-for="Password" class="text-danger"></span>
-    <br/>
-    <button type="submit" class="btn btn-primary mt-3">Sign In</button>
-
-</form>
-
+<br/>
+            <div class="d-flex justify-content-center mt-3">
+                <button type="submit" class="btn btn-primary">Sign In</button>
+                <a href="@Url.Action("SignUp", "User")" class="btn btn-secondary ms-2">Sign Up</a>
+            </div>
+        </form>
+    </div>
+</body>
