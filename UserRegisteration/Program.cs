@@ -34,6 +34,8 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseSession(); // Add session middleware
+
 app.UseAuthorization();
 
 app.MapControllerRoute(
@@ -41,3 +43,5 @@ app.MapControllerRoute(
     pattern: "{controller=User}/{action=Login}/{id?}");
 
 app.Run();
+
+
