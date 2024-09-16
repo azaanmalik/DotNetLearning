@@ -1,7 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Http;
 using UserRegisteration.Models;
-using System.Linq;
 
 namespace UserRegisteration.Controllers
 {
