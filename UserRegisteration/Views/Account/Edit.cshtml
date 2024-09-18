@@ -37,7 +37,7 @@
 
             <div class="mb-2">
                 <a asp-for="Date_of_Birth" class="form-label text-decoration-none text-black">Date of Birth</a>
-                <input asp-for="Date_of_Birth" class="form-control" type="date" />
+                <input asp-for="Date_of_Birth" value="@Model.Date_of_Birth?.ToString("yyyy-MM-dd")" class="form-control" type="date" />
             </div>
 
             <div class="mb-2">
